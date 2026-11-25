@@ -179,5 +179,64 @@ document.getElementById("enquiryForm").addEventListener("submit", function(event
   window.location.href = "mailto:" + ACADEMY_EMAIL + "?subject=" + subject + "&body=" + body;
 });
 </script>
+  
+<section id="admission" style="padding:30px 15px;background:#f0f6ff;text-align:center;">
+  <h2>Student Admission Form</h2>
+  <p>Join Shahzad Online Academy</p>
+
+  <form onsubmit="sendAdmission(event)" style="max-width:400px;margin:auto;">
+    <input id="student" type="text" placeholder="Student Name" required style="width:100%;padding:12px;margin:7px 0;box-sizing:border-box;">
+
+    <input id="parent" type="text" placeholder="Parent Name" required style="width:100%;padding:12px;margin:7px 0;box-sizing:border-box;">
+
+    <input id="country" type="text" placeholder="Country" required style="width:100%;padding:12px;margin:7px 0;box-sizing:border-box;">
+
+    <select id="className" required style="width:100%;padding:12px;margin:7px 0;">
+      <option value="">Select Class</option>
+      <option>Class 1</option>
+      <option>Class 2</option>
+      <option>Class 3</option>
+      <option>Class 4</option>
+      <option>Class 5</option>
+    </select>
+
+    <select id="subject" required style="width:100%;padding:12px;margin:7px 0;">
+      <option value="">Select Subject</option>
+      <option>Maths</option>
+      <option>Hindi</option>
+    </select>
+
+    <input id="phone" type="tel" placeholder="WhatsApp Number" required style="width:100%;padding:12px;margin:7px 0;box-sizing:border-box;">
+
+    <button type="submit" style="width:100%;padding:14px;background:#128c4a;color:white;border:0;border-radius:6px;font-size:16px;">
+      Submit Admission
+    </button>
+  </form>
+</section>
+
+<script>
+function sendAdmission(event) {
+  event.preventDefault();
+
+  const message =
+    "New Admission Enquiry - Shahzad Online Academy\n" +
+    "Student: " + document.getElementById("student").value + "\n" +
+    "Parent: " + document.getElementById("parent").value + "\n" +
+    "Country: " + document.getElementById("country").value + "\n" +
+    "Class: " + document.getElementById("className").value + "\n" +
+    "Subject: " + document.getElementById("subject").value + "\n" +
+    "WhatsApp: " + document.getElementById("phone").value;
+
+  const academyNumber = "917257954961";
+
+  window.open(
+    "https://wa.me/" + academyNumber +
+    "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
+</body>
+</html>
 </body>
 </html>
