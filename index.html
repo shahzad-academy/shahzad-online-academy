@@ -215,17 +215,25 @@ document.getElementById("enquiryForm").addEventListener("submit", function(event
 </section>
 
 <script>
+
 function sendAdmission(event) {
   event.preventDefault();
 
+  const student = document.getElementById("student").value;
+  const parent = document.getElementById("parent").value;
+  const country = document.getElementById("country").value;
+  const className = document.getElementById("className").value;
+  const subject = document.getElementById("subject").value;
+  const phone = document.getElementById("phone").value;
+
   const message =
-    "New Admission Enquiry - Shahzad Online Academy\n" +
-    "Student: " + document.getElementById("student").value + "\n" +
-    "Parent: " + document.getElementById("parent").value + "\n" +
-    "Country: " + document.getElementById("country").value + "\n" +
-    "Class: " + document.getElementById("className").value + "\n" +
-    "Subject: " + document.getElementById("subject").value + "\n" +
-    "WhatsApp: " + document.getElementById("phone").value;
+    "New Admission Enquiry - Shahzad Online Academy\n\n" +
+    "Student Name: " + student + "\n" +
+    "Parent Name: " + parent + "\n" +
+    "Country: " + country + "\n" +
+    "Class: " + className + "\n" +
+    "Subject: " + subject + "\n" +
+    "WhatsApp Number: " + phone;
 
   const academyNumber = "917257954961";
 
@@ -235,8 +243,4 @@ function sendAdmission(event) {
     "_blank"
   );
 }
-</script>
-</body>
-</html>
-</body>
-</html>
+  
